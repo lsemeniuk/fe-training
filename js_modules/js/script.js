@@ -7,28 +7,8 @@ let three = 3;
 export { two, three };
 
 //Class
-export class Person {
-  constructor(name) {
-    this.name = name
-  }
-}
+import { summ } from './11/file.js';
 
-//Function
-export function sayHello() {
-  console.log('hello!');
-}
+summ(1, 3);
 
-export { Person, sayHello }
-
-
-//Rename
-export { one as once, two as twice };
-
-import { one, two } from './file.js'
-
-// Rename import
-
-import { one as num1, two as num2 } from './file.js';
-
-// One Import
-import *as numbers from './file.js';
+summ(53, 3);

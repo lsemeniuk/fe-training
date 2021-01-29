@@ -1,7 +1,8 @@
-import React, { Component } from 'react'
-import axios from 'axios'
+import React, { PureComponent } from 'react'
+import Loader from '../Loader/Loader';
+import axios from 'axios';
 
-export default class Characters extends Component {
+class Characters extends PureComponent {
   state = {
     characters: [],
     isLoading: true
@@ -16,11 +17,16 @@ export default class Characters extends Component {
   }
 
   render() {
-    const {characters, isLoading} = this.state;
-    {if (isLoading) {
+    const { characters, isLoading } = this.state;
+
+    if (isLoading) {
       return <Loader />
     }
-    return ()
-   }
+
+    const characterNames = characters.map(c => c.name).join(', ');
+
+    return characterNames;
   }
 }
+
+export default Characters

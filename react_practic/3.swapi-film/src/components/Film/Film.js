@@ -1,6 +1,4 @@
 import React, { Component } from 'react'
-import PropTypes from 'prop-types'
-import Button from '../Button/Button';
 import FilmDetail from '../FilmDetail/FilmDetail';
 
 export default class Film extends Component {
@@ -17,13 +15,13 @@ export default class Film extends Component {
     const { expanded } = this.state;
 
     return (
-      <li>
+      <div>
         <div>
           {film.name}
           {!expanded && <button onClick={this.expandedFilm}>Детальнее</button>}
         </div>
         {expanded && <FilmDetail film={film} />}
-      </li>
+      </div>
     )
   }
 }

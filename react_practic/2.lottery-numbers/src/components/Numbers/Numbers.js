@@ -1,17 +1,16 @@
-import React, { Component } from 'react'
-import Button from '../Button/Button'
+import React, { PureComponent } from 'react'
+import Button from '../Button/Button';
 
-export default class Numbers extends Component {
+export default class Numbers extends PureComponent {
   render() {
-    const {numbers, deleteNumbers} = this.props;
+    const { numbers, deleteNumber } = this.props;
 
-    const numbersList = numbers.map((n, i) => (
-      <div key={i}>{n} <Button title='X' onClick={() => deleteNumbers(n)}/></div>
+    const numberList = numbers.map((n, i) => (
+      <div className='number__item' key={i}>{n}<Button title='X' onClick={() => deleteNumber(n)} /></div>
     ))
-
     return (
       <div>
-        {numbersList}
+        {numberList}
       </div>
     )
   }

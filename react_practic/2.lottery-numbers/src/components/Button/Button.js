@@ -1,11 +1,10 @@
-import React, { Component } from 'react'
+import React, { PureComponent } from 'react'
 
-export default class Button extends Component {
+export default class Button extends PureComponent {
   render() {
-    const {title, onClick} = this.props;
-
+    const { title, onClick } = this.props
     return (
-        <button onClick={onClick}>{title}</button>    
+      <button onClick={onClick}>{title}</button>
     )
   }
 }

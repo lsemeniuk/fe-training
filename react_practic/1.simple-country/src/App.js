@@ -2,42 +2,37 @@ import React, { Component } from 'react'
 
 export default class App extends Component {
   state = {
-    count: 50,
-    step: 5
-  }
-
-  decrementCount = () => {
-    const {count, step} = this.state
-    this.setState({count: Math.max(count - step, 0)})
+    count: 100,
+    step: 10
   }
 
   incrementCount = () => {
-    const {count, step} = this.state
-    this.setState({count: Math.min(count + step, 100)})
+    const { count, step } = this.state;
+    this.setState({count: Math.max(count - step, 0)})
   }
-  
-  decrementStep = () => {
-    this.setState({step: Math.max(this.state.step - 1, 0)})
+  decrementCount = () => {
+    const { count, step } = this.state;
+    this.setState({count: Math.min(count + step, 3000)})
   }
-
   incrementStep = () => {
-    this.setState({step: Math.min(this.state.step + 1, 10)})
+    this.setState({step: Math.max(this.state.step - 5, 5)})
   }
-
+  decrementStep = () => {
+    this.setState({step: Math.min(this.state.step + 5, 20)})
+  }
   render() {
-    const {count, step} = this.state
-
+    const { count, step } = this.state;
     return (
       <div>
         <div>
-          <button onClick={this.decrementCount}>-</button>
+          <button onClick={this.incrementCount}>-</button>
           <span>{count}</span>
-          <button onClick={this.incrementCount}>+</button>
+          <button onClick={this.decrementCount}>+</button>
         </div>
         <div>
-          <button onClick={this.decrementStep}>-</button>
+          <button onClick={this.incrementStep}>-</button>
           <span>{step}</span>
-          <button onClick={this.incrementStep}>+</button>
+          <button onClick={this.decrementStep}>+</button>
         </div>
       </div>
     )

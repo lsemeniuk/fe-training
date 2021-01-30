@@ -1,8 +1,9 @@
 import React, { Component } from 'react'
 import Button from './components/Button/Button'
 import Numbers from './components/Numbers/Numbers'
+import './App.css'
 
-const LIMIT = 36;
+const LIMIT = 20;
 
 export default class App extends Component {
   state = {
@@ -10,32 +11,32 @@ export default class App extends Component {
   }
 
   generateNumber = () => {
-    const {numbers} = this.state;
+    const { numbers } = this.state;
     let random;
 
     if (numbers.length >= LIMIT) {
-      return;     
+      return
     }
 
     do {
       random = Math.ceil(Math.random() * LIMIT)
-      console.log("Random numbers generate", random);
-    } while (numbers.includes(random));
+      console.log('Generate number', random);
+    } while (numbers.includes(random))
 
     this.setState({numbers: [...numbers, random]})
   }
 
-  deleteNumbers = (n) => {
-    const {numbers} = this.state;
+  deleteNumber = (n) => {
+    const { numbers } = this.state;
     this.setState({numbers: numbers.filter(i => i !== n)})
   }
 
   render() {
-    const {numbers} = this.state
+    const { numbers } = this.state;
     return (
       <div>
-        <Button title='Generate' onClick={this.generateNumber} disable={numbers.length >= LIMIT} />
-        <Numbers numbers={numbers} deleteNumbers={this.deleteNumbers} />
+        <Button title='Generate' onClick={this.generateNumber} />
+        <Numbers numbers={numbers} deleteNumber={this.deleteNumber} />
       </div>
     )
   }

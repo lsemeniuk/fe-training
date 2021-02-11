@@ -1,9 +1,7 @@
-import React, { PureComponent } from 'react'
+import React from 'react'
 import Characters from '../Characters/Characters';
 
-export default class FilmDetail extends PureComponent {
-  render() {
-    const { film } = this.props
+const FilmDetail = ({ film }) => {
     return (
       <div>
         <div>Episode ID: {film.episodeId}</div>
@@ -11,5 +9,6 @@ export default class FilmDetail extends PureComponent {
         <div>Characters: <Characters film={film} /></div>
       </div>
     )
-  }
 }
+
+export default FilmDetail

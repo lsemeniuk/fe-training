@@ -1,27 +1,22 @@
-import React, { PureComponent } from 'react'
+import React, { useState } from 'react'
 import FilmDetail from '../FilmDetail/FilmDetail';
 
-export default class Film extends PureComponent {
-  state = {
-    expanded: false
-  }
+const Film = ({ film }) => {
+  const [expanded, setExpanded] = useState(false)
 
-  expandedFilm = () => {
-    this.setState({expanded: true})
+  const expandedFilm = () => {
+    setExpanded(true)
   }
-
-  render() {
-    const { film } = this.props;
-    const { expanded } = this.state;
 
     return (
       <div>
         <div>
           {film.name}
-          {!expanded && <button onClick={this.expandedFilm}>Детальнее</button>}
+          {!expanded && <button onClick={expandedFilm}>Детальнее</button>}
         </div>
         {expanded && <FilmDetail film={film}/>}
       </div>
     )
-  }
 }
+
+export default Film

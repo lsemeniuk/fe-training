@@ -1,9 +1,7 @@
-import React, { PureComponent } from 'react'
+import React from 'react'
 import './Loader.scss'
 
-export default class Loader extends PureComponent {
-
-  render() {
+const Loader = () => {
     return (
       <div style={{display: 'flex', justifyContent: 'center', margin: '.5rem'}}>
         <div className="lds-spinner">
@@ -22,5 +20,6 @@ export default class Loader extends PureComponent {
         </div>
         </div>
     )
-  }
 }
+
+export default Loader

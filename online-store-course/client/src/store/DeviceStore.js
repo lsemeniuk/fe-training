@@ -13,6 +13,7 @@ export default class DeviceStore {
       { id: 2, name: 'Apple' },
       { id: 3, name: 'Lenovo' },
       { id: 4, name: 'Asus' },
+      { id: 5, name: 'Xiaomi' },
     ];
     this._devices = [
       {
@@ -20,28 +21,70 @@ export default class DeviceStore {
         name: 'Iphone 12 pro',
         price: 23000,
         rating: 5,
-        img: 'http://localhost:5000/3f4df93d-445b-4a80-a99e-a3384c00bbf4.jpg',
+        img: 'https://i.citrus.ua/imgcache/size_800/uploads/shop/2/1/21c6dc6eebbbbdf5a291e66367f81acc.jpg',
       },
       {
         id: 2,
         name: 'Iphone 12 pro',
         price: 21000,
         rating: 4,
-        img: 'http://localhost:5000/3f4df93d-445b-4a80-a99e-a3384c00bbf4.jpg',
+        img: 'https://i.citrus.ua/imgcache/size_800/uploads/shop/2/1/21c6dc6eebbbbdf5a291e66367f81acc.jpg',
       },
       {
         id: 3,
         name: 'Iphone 12 pro',
         price: 20000,
         rating: 3,
-        img: 'http://localhost:5000/3f4df93d-445b-4a80-a99e-a3384c00bbf4.jpg',
+        img: 'https://i.citrus.ua/imgcache/size_800/uploads/shop/2/1/21c6dc6eebbbbdf5a291e66367f81acc.jpg',
       },
       {
         id: 4,
         name: 'Iphone 12 pro',
         price: 25000,
         rating: 5,
-        img: 'http://localhost:5000/3f4df93d-445b-4a80-a99e-a3384c00bbf4.jpg',
+        img: 'https://i.citrus.ua/imgcache/size_800/uploads/shop/2/1/21c6dc6eebbbbdf5a291e66367f81acc.jpg',
+      },
+      {
+        id: 5,
+        name: 'Iphone 12 pro',
+        price: 25000,
+        rating: 5,
+        img: 'https://i.citrus.ua/imgcache/size_800/uploads/shop/2/1/21c6dc6eebbbbdf5a291e66367f81acc.jpg',
+      },
+      {
+        id: 6,
+        name: 'Iphone 12 pro',
+        price: 25000,
+        rating: 5,
+        img: 'https://i.citrus.ua/imgcache/size_800/uploads/shop/2/1/21c6dc6eebbbbdf5a291e66367f81acc.jpg',
+      },
+      {
+        id: 7,
+        name: 'Iphone 12 pro',
+        price: 25000,
+        rating: 5,
+        img: 'https://i.citrus.ua/imgcache/size_800/uploads/shop/2/1/21c6dc6eebbbbdf5a291e66367f81acc.jpg',
+      },
+      {
+        id: 8,
+        name: 'Iphone 12 pro',
+        price: 25000,
+        rating: 5,
+        img: 'https://i.citrus.ua/imgcache/size_800/uploads/shop/2/1/21c6dc6eebbbbdf5a291e66367f81acc.jpg',
+      },
+      {
+        id: 9,
+        name: 'Iphone 12 pro',
+        price: 25000,
+        rating: 5,
+        img: 'https://i.citrus.ua/imgcache/size_800/uploads/shop/2/1/21c6dc6eebbbbdf5a291e66367f81acc.jpg',
+      },
+      {
+        id: 10,
+        name: 'Iphone 12 pro',
+        price: 25000,
+        rating: 5,
+        img: 'https://i.citrus.ua/imgcache/size_800/uploads/shop/2/1/21c6dc6eebbbbdf5a291e66367f81acc.jpg',
       },
     ];
     this._selectedType = {};
@@ -71,8 +114,8 @@ export default class DeviceStore {
   get brands() {
     return this._brands;
   }
-  get deices() {
-    return this._deices;
+  get devices() {
+    return this._devices;
   }
   get selectedType() {
     return this._selectedType;

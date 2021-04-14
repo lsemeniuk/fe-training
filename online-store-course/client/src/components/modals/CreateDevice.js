@@ -1,8 +1,8 @@
-import { observer } from 'mobx-react-lite';
 import React, { useContext, useEffect, useState } from 'react';
-import { Button, Col, Dropdown, Form, Modal, Row } from 'react-bootstrap';
-import { createDevice, fetchBrands, fetchTypes } from '../../http/deviceApi';
+import { Button, Dropdown, Form, Row, Col, Modal } from 'react-bootstrap';
 import { Context } from '../../index';
+import { createDevice, fetchBrands, fetchTypes } from '../../http/deviceAPI';
+import { observer } from 'mobx-react-lite';
 
 const CreateDevice = observer(({ show, onHide }) => {
   const { device } = useContext(Context);
@@ -22,7 +22,6 @@ const CreateDevice = observer(({ show, onHide }) => {
   const removeInfo = number => {
     setInfo(info.filter(i => i.number !== number));
   };
-
   const changeInfo = (key, value, number) => {
     setInfo(info.map(i => (i.number === number ? { ...i, [key]: value } : i)));
   };
@@ -43,13 +42,13 @@ const CreateDevice = observer(({ show, onHide }) => {
   };
 
   return (
-    <Modal show={show} onHide={onHide} size='lg' centered>
+    <Modal show={show} onHide={onHide} centered>
       <Modal.Header closeButton>
         <Modal.Title id='contained-modal-title-vcenter'>Добавить устройство</Modal.Title>
       </Modal.Header>
       <Modal.Body>
         <Form>
-          <Dropdown className={'mt-2 mb-2'}>
+          <Dropdown className='mt-2 mb-2'>
             <Dropdown.Toggle>{device.selectedType.name || 'Выберите тип'}</Dropdown.Toggle>
             <Dropdown.Menu>
               {device.types.map(type => (
@@ -59,8 +58,8 @@ const CreateDevice = observer(({ show, onHide }) => {
               ))}
             </Dropdown.Menu>
           </Dropdown>
-          <Dropdown className={'mt-2 mb-2'}>
-            <Dropdown.Toggle>{device.selectedBrand.name || 'Выберите бренд'}</Dropdown.Toggle>
+          <Dropdown className='mt-2 mb-2'>
+            <Dropdown.Toggle>{device.selectedBrand.name || 'Выберите тип'}</Dropdown.Toggle>
             <Dropdown.Menu>
               {device.brands.map(brand => (
                 <Dropdown.Item onClick={() => device.setSelectedBrand(brand)} key={brand.id}>
@@ -70,19 +69,19 @@ const CreateDevice = observer(({ show, onHide }) => {
             </Dropdown.Menu>
           </Dropdown>
           <Form.Control
-            onChange={e => setName(e.target.value)}
             value={name}
-            className={'mt-3'}
+            onChange={e => setName(e.target.value)}
+            className='mt-3'
             placeholder='Введите название устройства'
           />
           <Form.Control
-            onChange={e => setPrice(Number(e.target.value))}
             value={price}
-            type='number'
-            className={'mt-3'}
+            onChange={e => setPrice(Number(e.target.value))}
+            className='mt-3'
             placeholder='Введите стоимость устройства'
+            type='number'
           />
-          <Form.Control type='file' className={'mt-3'} onChange={selectFile} />
+          <Form.Control className='mt-3' type='file' onChange={selectFile} />
           <hr />
           <Button variant={'outline-dark'} onClick={addInfo}>
             Добавить новое свойство
@@ -93,18 +92,18 @@ const CreateDevice = observer(({ show, onHide }) => {
                 <Form.Control
                   value={i.title}
                   onChange={e => changeInfo('title', e.target.value, i.number)}
-                  placeholder={'Введите название свойства'}
+                  placeholder='Введите название свойства'
                 />
               </Col>
               <Col md={4}>
                 <Form.Control
                   value={i.description}
                   onChange={e => changeInfo('description', e.target.value, i.number)}
-                  placeholder={'Введите описание свойства'}
+                  placeholder='Введите описание свойства'
                 />
               </Col>
               <Col md={4}>
-                <Button variant={'outline-danger'} onClick={() => removeInfo(i.number)}>
+                <Button onClick={() => removeInfo(i.number)} variant={'outline-danger'}>
                   Удалить
                 </Button>
               </Col>

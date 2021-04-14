@@ -1,8 +1,8 @@
 import React, { useContext, useState } from 'react';
-import { Button, Card, Container, Form, Row } from 'react-bootstrap';
-import { NavLink, useHistory, useLocation } from 'react-router-dom';
+import { Container, Form, Card, Button, Row } from 'react-bootstrap';
+import { NavLink, useLocation, useHistory } from 'react-router-dom';
+import { LOGIN_ROUTE, REGISTRATION_ROUTE, SHOP_ROUTE } from '../utils/consts';
 import { login, registration } from '../http/userAPI';
-import { LOGIN_ROUTE, REGISTRATION_ROUTE, SHOP_ROUTE } from '../utils/const';
 import { observer } from 'mobx-react-lite';
 import { Context } from '../index';
 
@@ -42,11 +42,11 @@ const Auth = observer(() => {
             onChange={e => setEmail(e.target.value)}
           />
           <Form.Control
-            type='password'
             className='mt-3'
             placeholder='Введите ваш пароль...'
             value={password}
             onChange={e => setPassword(e.target.value)}
+            type='password'
           />
           <Row className='d-flex justify-content-between mt-3 pl-3 pr-3'>
             {isLogin ? (

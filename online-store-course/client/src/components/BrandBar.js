@@ -1,10 +1,11 @@
-import { observer } from 'mobx-react-lite';
 import React, { useContext } from 'react';
-import { Card, Row } from 'react-bootstrap';
+import { observer } from 'mobx-react-lite';
 import { Context } from '../index';
+import { Card, Row } from 'react-bootstrap';
 
-export const BrandBar = observer(() => {
+const BrandBar = observer(() => {
   const { device } = useContext(Context);
+
   return (
     <Row className='d-flex'>
       {device.brands.map(brand => (
@@ -21,3 +22,5 @@ export const BrandBar = observer(() => {
     </Row>
   );
 });
+
+export default BrandBar;

@@ -1,13 +1,14 @@
 import React, { useContext } from 'react';
 import { Context } from '../index';
-import { Navbar, Nav, Button, Container } from 'react-bootstrap';
-import { ADMIN_ROUTE, LOGIN_ROUTE, SHOP_ROUTE } from '../utils/const';
+import { ADMIN_ROUTE, LOGIN_ROUTE, SHOP_ROUTE } from '../utils/consts';
+import { Button, Navbar, Nav, Container } from 'react-bootstrap';
 import { observer } from 'mobx-react-lite';
 import { useHistory, NavLink } from 'react-router-dom';
 
 const NavBar = observer(() => {
   const { user } = useContext(Context);
   const history = useHistory();
+
   const logOut = () => {
     user.setUser({});
     user.setIsAuth(false);

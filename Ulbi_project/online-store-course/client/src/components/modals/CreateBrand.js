@@ -11,6 +11,7 @@ const CreateBrand = ({ show, onHide }) => {
       onHide();
     });
   };
+
   return (
     <Modal show={show} onHide={onHide} centered>
       <Modal.Header closeButton>

@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import { Redirect } from 'react-router-dom';
 import { setCurrentPage } from '../../reducers/reposReducer';
 import { createPages } from '../../utils/pagesCreator';
 import { getRepos } from '../actions/repos';
@@ -13,6 +14,7 @@ const Main = () => {
   const currentPage = useSelector(state => state.repos.currentPage);
   const totalCount = useSelector(state => state.repos.totalCount);
   const perPage = useSelector(state => state.repos.perPage);
+  const isFetchError = useSelector(state => state.repos.isFetchError);
   const [searchValue, setSearchValue] = useState('');
   const pagesCount = Math.ceil(totalCount / perPage);
 
@@ -30,6 +32,11 @@ const Main = () => {
 
   return (
     <div>
+      {isFetchError && (
+        <div class='alert alert-danger' role='alert'>
+          Произошла ошибка! Пожалуйста одновите страницу
+        </div>
+      )}
       <div className='search'>
         <input
           value={searchValue}

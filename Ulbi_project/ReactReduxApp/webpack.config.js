@@ -9,7 +9,7 @@ module.exports = {
     path: path.resolve(__dirname, 'dist'),
     filename: '[name].[hash].js',
   },
-  devServer: { port: 3000 },
+  devServer: { port: 3000, historyApiFallback: true },
   resolve: {
     extensions: ['.js', '.jsx'],
   },

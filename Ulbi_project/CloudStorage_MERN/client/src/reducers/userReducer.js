@@ -1,12 +1,13 @@
-const defaultsState = {
-  currentUser: {name: 'Leonid'},
-  isAuth: false
+
+const defaultState = {
+    currentUser: {},
+    isAuth: false
 }
 
-export default function userReducer(state = defaultsState, action) {
-  switch (action.type) {
+export default function userReducer(state = defaultState, action) {
+    switch (action.type) {
 
-    default:
-      return state
-  }
+        default:
+            return state
+    }
 }

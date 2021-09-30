@@ -12,11 +12,9 @@
 
 .slider-container {
   overflow: hidden;
-  background-color: pink;
 }
 .slider-track {
   display: flex;
-  background-color: yellow;
   transition: .2s;
 }
 .slider-item {

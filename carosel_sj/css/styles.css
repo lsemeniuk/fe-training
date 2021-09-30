@@ -1,0 +1,51 @@
+*,
+::before,
+::after {
+  box-sizing: border-box;
+}
+
+.wrapper {
+  width: 80vw;
+  margin: 0 auto;
+  position: relative;
+}
+
+.slider-container {
+  overflow: hidden;
+  background-color: pink;
+}
+.slider-track {
+  display: flex;
+  background-color: yellow;
+  transition: .2s;
+}
+.slider-item {
+  height: 40vh;
+}
+.slider-item:nth-child(3n+1) {background-color: red;}
+.slider-item:nth-child(3n+2) {background-color: green;}
+.slider-item:nth-child(3n+3) {background-color: blue;}
+.slider-buttons {
+  text-align: center;
+}
+.btn {
+  height: 20px;
+  width: 20px;
+  position: absolute;
+  top: calc(50% - 10px);
+  background-color: #84bd00;
+  border-radius: 20px;
+  border: none;
+  color: #fff;
+}
+
+
+.btn-prev {
+  left: -60px;
+}
+.btn-next {
+  right: -60px;
+}
+.btn:disabled {
+  display: none;
+}

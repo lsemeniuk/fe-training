@@ -32,8 +32,8 @@
 
 //PATH
 // const path = require('path');
-// console.log(path.join(__dirname, 'first', 'second'));
-// console.log(path.join(__dirname, '..', '..'));
+// console.log(path.join(__dirname, 'first', 'second')); - склеїти шляхи
+// console.log(path.join(__dirname, '..', '..')); - повернутись на дві папки назад
 // console.log(path.resolve('first', 'second'));
 // const fullPath = path.resolve('first', 'second.js');
 // console.log('Парсинг шляху', path.parse(fullPath));

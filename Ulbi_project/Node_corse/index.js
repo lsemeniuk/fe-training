@@ -31,13 +31,13 @@
 // }
 
 //PATH
-// const path = require('path');
-// console.log(path.join(__dirname, 'first', 'second')); - склеїти шляхи
-// console.log(path.join(__dirname, '..', '..')); - повернутись на дві папки назад
-// console.log(path.resolve('first', 'second'));
-// const fullPath = path.resolve('first', 'second.js');
-// console.log('Парсинг шляху', path.parse(fullPath));
-// console.log('Розділювач в ОС', path.sep);
+const path = require('path');
+// console.log(path.join(__dirname, 'first', 'second')); //- склеїти шляхи
+// console.log(path.join(__dirname, '..', '..')); //- повернутись на дві папки назад
+// console.log(path.resolve('first', 'second')); //- видає абсолютний шлях
+const fullPath = path.resolve('first', 'second.js');
+console.log("Парсинг шляху в об'єкт", path.parse(fullPath));
+// console.log('Розділювач в ОС', path.sep);pre
 // console.log('Перевірити на абсолютний шлях', path.isAbsolute(fullPath));
 // console.log('Назва файлу', path.basename(fullPath));
 // console.log('Розширення файлу', path.extname(fullPath));
@@ -48,7 +48,7 @@
 
 //FILE SYSTEM
 const fs = require('fs');
-const path = require('path');
+// const path = require('path');
 
 // fs.mkdirSync(path.resolve(__dirname, 'dir', 'dir2', 'dir3'), { recursive: true });
 

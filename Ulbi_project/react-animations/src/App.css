@@ -23,7 +23,7 @@
   border: 3px dashed black;
 }
 
-.circle.entering {
+/* .circle.entering {
   animation: show-loader 0.5s forwards;
 }
 
@@ -36,6 +36,18 @@
 }
 
 .circle.exited {
+} */
+
+.circle-show {
+  animation: show-loader 0.5s forwards;
+}
+
+.circle-rotate {
+  animation: rotate-loader 0.5s infinite;
+}
+
+.circle-hide {
+  animation: show-loader 0.5s reverse;
 }
 
 @keyframes show-loader {

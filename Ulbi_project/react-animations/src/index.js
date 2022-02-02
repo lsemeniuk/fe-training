@@ -1,5 +1,5 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import AppSwitchTransition from './AppSwitchTransition';
+import AppTransitionGroup from './AppTransitionGroup';
 
-ReactDOM.render(<AppSwitchTransition />, document.getElementById('root'));
+ReactDOM.render(<AppTransitionGroup />, document.getElementById('root'));

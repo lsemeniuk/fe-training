@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Simple Parallax Scrolling Effect</title>
+    <link rel="stylesheet" type="text/css" href="style.css" />
+  </head>
+  <body>
+    <section id="wrap">
+      <img src="./img/bg.jpg" id="bg" alt="background" />
+      <img src="./img/moon.png" id="moon" alt="moon" />
+      <img src="./img/mountain.png" id="mountain" alt="mountain" />
+      <img src="./img/road.png" id="road" alt="road" />
+      <h2 id="text">Moon Light</h2>
+    </section>
+    <section class="content">
+      <p>
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Facilis nemo consequuntur molestiae accusantium non
+        voluptatem, eveniet eum ab atque libero aperiam voluptatibus deleniti perferendis dolorum aliquid iusto, aliquam
+        sequi reprehenderit dicta assumenda temporibus? Nisi magnam exercitationem expedita perspiciatis eos nobis
+        quisquam corrupti omnis natus ducimus illo quam eum laudantium dignissimos incidunt perferendis, tenetur est
+        error? Quo odit possimus a cum voluptates accusantium quos, delectus dolor! Officia excepturi cupiditate dolorem
+        enim dolorum deleniti placeat accusamus exercitationem natus, libero sunt aut, a ex, odio voluptate perspiciatis
+        voluptates laudantium ratione? Neque atque, a culpa iusto ab, harum eveniet non officiis aliquid totam
+        molestiae.
+      </p>
+      <p>
+        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Beatae similique, nostrum totam unde natus, voluptate
+        magni optio illo animi error suscipit temporibus aliquid et soluta provident blanditiis laboriosam praesentium
+        est, quod voluptatibus? Voluptate libero doloribus beatae at adipisci quos ea asperiores consectetur voluptates
+        iure? Similique officiis distinctio dignissimos praesentium. Odio voluptas cupiditate molestiae unde quisquam
+        placeat, porro nemo, recusandae accusamus dolorem veniam natus atque nihil culpa. Dolorem quaerat quasi, ex
+        officiis nesciunt nobis animi voluptatem molestias, dicta nostrum assumenda. Dolorem veniam dignissimos ducimus
+        vitae quia quod doloribus? Ipsum a quis reiciendis error nam officiis eveniet natus iste sit! Natus placeat
+        laudantium voluptatem, cum similique harum aliquam sunt repudiandae error veritatis quia praesentium
+        necessitatibus officia temporibus. Ut eligendi fugiat provident minima animi dolorem cupiditate qui esse
+        molestiae. Ullam dolorum voluptas cum, asperiores natus aliquid repellat nulla deleniti reprehenderit optio
+        ratione dolores nobis beatae laboriosam eveniet? Id adipisci omnis maxime officiis fuga.
+      </p>
+      <p>
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Facilis nemo consequuntur molestiae accusantium non
+        voluptatem, eveniet eum ab atque libero aperiam voluptatibus deleniti perferendis dolorum aliquid iusto, aliquam
+        sequi reprehenderit dicta assumenda temporibus? Nisi magnam exercitationem expedita perspiciatis eos nobis
+        quisquam corrupti omnis natus ducimus illo quam eum laudantium dignissimos incidunt perferendis, tenetur est
+        error? Quo odit possimus a cum voluptates accusantium quos, delectus dolor! Officia excepturi cupiditate dolorem
+        enim dolorum deleniti placeat accusamus exercitationem natus, libero sunt aut, a ex, odio voluptate perspiciatis
+        voluptates laudantium ratione? Neque atque, a culpa iusto ab, harum eveniet non officiis aliquid totam
+        molestiae.
+      </p>
+      <p>
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Adipisci, maiores, molestiae architecto quam natus
+        culpa praesentium illo quas corporis aperiam aliquid doloribus porro tempore quos doloremque! Expedita non vitae
+        nostrum qui. Unde, obcaecati suscipit ratione modi ipsa eveniet quia consequatur harum ab sunt, aperiam ex id
+        officia impedit nemo tempore magnam repellat architecto, vel nihil ducimus aut quisquam aliquam. Laudantium,
+        dicta natus. A rerum reiciendis veniam consequatur voluptatibus autem, amet tempore saepe illo inventore error,
+        dolore asperiores blanditiis ex non nam aspernatur quae. Nostrum, quae totam similique libero doloremque iusto
+        quisquam cupiditate dolorem consectetur corporis delectus quo aperiam odit accusamus eligendi quaerat voluptatem
+        ducimus hic, vel provident? Quia dolores commodi alias iusto dolorum sapiente ex, repellendus unde culpa. Vitae
+        ipsa omnis magni voluptates natus consectetur quae quisquam distinctio perferendis tenetur? Illum earum magni
+        commodi deserunt modi atque, natus deleniti reprehenderit, neque corporis accusamus error amet eius repellendus
+        animi! Veniam ipsum dignissimos aut incidunt quo eos iusto deleniti facilis, unde fuga suscipit velit maiores,
+        inventore aliquam eum dolore fugiat, dolor repudiandae earum placeat architecto! Porro architecto officia
+        repudiandae, odit nihil earum voluptate debitis rem quaerat dolor. Maiores temporibus dolore nihil adipisci
+        natus? Quo magni corporis consequatur eligendi itaque ullam, placeat est.
+      </p>
+    </section>
+
+    <script type="text/javascript">
+      let bg = document.getElementById('bg');
+      let moon = document.getElementById('moon');
+      let mountain = document.getElementById('mountain');
+      let road = document.getElementById('road');
+      let text = document.getElementById('text');
+
+      window.addEventListener('scroll', function () {
+        var value = window.scrollY;
+
+        bg.style.top = value * 0.5 + 'px';
+        moon.style.left = -value * 0.5 + 'px';
+        mountain.style.top = -value * 0.15 + 'px';
+        road.style.top = value * 0.15 + 'px';
+        text.style.top = value * 1 + 'px';
+      });
+    </script>
+  </body>
+</html>

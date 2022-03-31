@@ -113,3 +113,16 @@
 // function isClosedBracket(ch) {
 //   return [')', '}', ']'].indexOf(ch) > -1;
 // }
+// let list = document.querySelectorAll('tbody');
+
+// let items = list[2].querySelectorAll('tr');
+
+// let finallys = [];
+
+// for (let index = 1; index < items.length; index++) {
+//   const element = items[index];
+//   let row = element.querySelectorAll('td');
+
+//   finallys.push({ eng: row[0].textContent, ua: row[1].textContent });
+// }
+// console.log(finallys);

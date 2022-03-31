@@ -1,70 +1,40 @@
 import './App.css';
-import { words } from './5000Words';
-import { useEffect, useState } from 'react';
+import { words } from './uaWords3000';
+import Trainer from './Components/Trainer/Trainer';
 
 function App() {
-  let numWordStor = localStorage.getItem('numWord');
-
-  if (!numWordStor) {
-    numWordStor = 0;
-    localStorage.setItem('numWord', numWordStor);
-  }
-
-  const [open, setOpen] = useState(false);
-  const [numWord, setNumWord] = useState(+numWordStor);
-
-  useEffect(() => {}, [numWord]);
-
-  const prev = () => {
-    if (numWord <= 0) {
-      return;
-    }
-    setNumWord(numWord - 1);
-    setOpen(false);
-    localStorage.setItem('numWord', numWord - 1);
-  };
-
-  const next = () => {
-    if (numWord >= words.length) {
-      return;
-    }
-    setNumWord(numWord + 1);
-    setOpen(false);
-    localStorage.setItem('numWord', numWord + 1);
-  };
-
-  let wordNode;
-  if (!open) {
-    wordNode = (
-      <div className='wordEng'>
-        <div className='wordString'>{words[numWordStor].ru}</div>
-      </div>
-    );
-  } else {
-    let word = words[numWordStor];
-    wordNode = (
-      <div className='wordRu'>
-        <img src={word.img} width={250}></img>
-        <div className='wordString'>{word.eng}</div>
-        <div>{word.example}</div>
-      </div>
-    );
+  let pagesQuant = Math.ceil(words.length / 50);
+  let items = [];
+  for (let page = 1; page <= pagesQuant; page++) {
+    let wordsCount = (page - 1) * 50;
+    let engWords = [];
+    let uaWords = [];
+    words.forEach((e, i) => {
+      if (wordsCount <= i && wordsCount + 49 >= i) {
+        let engNode = (
+          <div className='itemEng' key={e.eng}>
+            {e.eng}
+          </div>
+        );
+        let uaWord = e.ua;
+        if (uaWord.length >= 70) {
+          uaWord = uaWord.slice(0, 70);
+        }
+        let uaNode = (
+          <div className='itemUA' key={e.eng + i}>
+            {uaWord}
+          </div>
+        );
+        engWords.push(engNode);
+        uaWords.push(uaNode);
+      }
+    });
+    items.push(<div className='itemsContainer'>{engWords}</div>, <div className='itemsContainerUA'>{uaWords}</div>);
   }
 
   return (
-    <div className='App'>
-      <div className='wordContainer'>
-        <button className='pre toggle' onClick={prev}>
-          pre
-        </button>
-        {wordNode}
-        <button className='next toggle' onClick={next}>
-          next
-        </button>
-      </div>
-      <button className='open' onClick={() => setOpen(!open)}>
-        open
-      </button>
+    <div className='container'>
+      <div className='list'>{items}</div>
     </div>
   );
 }

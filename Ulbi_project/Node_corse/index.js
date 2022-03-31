@@ -18,8 +18,8 @@
 
 //PROCESS
 // console.log(process.pid);
-// const dotenv = require('dotenv');
-// dotenv.config();
+const dotenv = require('dotenv');
+dotenv.config();
 // console.log(process.env.PORT);
 // console.log(process.env.NODE_ENV);
 // console.log(process.argv);
@@ -36,8 +36,8 @@ const path = require('path');
 // console.log(path.join(__dirname, '..', '..')); //- повернутись на дві папки назад
 // console.log(path.resolve('first', 'second')); //- видає абсолютний шлях
 const fullPath = path.resolve('first', 'second.js');
-console.log("Парсинг шляху в об'єкт", path.parse(fullPath));
-// console.log('Розділювач в ОС', path.sep);pre
+// console.log("Парсинг шляху в об'єкт", path.parse(fullPath));
+// console.log('Розділювач в ОС', path.sep);
 // console.log('Перевірити на абсолютний шлях', path.isAbsolute(fullPath));
 // console.log('Назва файлу', path.basename(fullPath));
 // console.log('Розширення файлу', path.extname(fullPath));
@@ -85,27 +85,27 @@ const fs = require('fs');
 
 //FILE SYSTEM PROMISES
 
-// const writeFileAsync = async (path, data) => {
-//   return new Promise((resolve, reject) => {
-//     fs.writeFile(path, data, (err) => {
-//       if (err) {
-//         return reject(err.message)
-//       }
-//       resolve()
-//     })
-//   })
-// }
+const writeFileAsync = async (path, data) => {
+  return new Promise((resolve, reject) => {
+    fs.writeFile(path, data, err => {
+      if (err) {
+        return reject(err.message);
+      }
+      resolve();
+    });
+  });
+};
 
-// const appendFileAsync = async (path, data) => {
-//   return new Promise((resolve, reject) => {
-//     fs.appendFile(path, data, (err) => {
-//       if (err) {
-//         return reject(err.message)
-//       }
-//       resolve()
-//     })
-//   })
-// }
+const appendFileAsync = async (path, data) => {
+  return new Promise((resolve, reject) => {
+    fs.appendFile(path, data, err => {
+      if (err) {
+        return reject(err.message);
+      }
+      resolve();
+    });
+  });
+};
 
 // writeFileAsync(path.resolve(__dirname, 'test.txt'), 'data ')
 //   .then(() => appendFileAsync(path.resolve(__dirname, 'test.txt'), 'onea sad '))
@@ -123,9 +123,9 @@ const readFileAsync = async path => {
   });
 };
 
-readFileAsync(path.resolve(__dirname, 'test.txt'))
-  .then(data => console.log(data))
-  .catch(err => console.log(err));
+// readFileAsync(path.resolve(__dirname, 'test.txt'))
+//   .then(data => console.log(data))
+//   .catch(err => console.log(err));
 
 const removeFileAsync = async path => {
   return new Promise((resolve, reject) => {
@@ -138,6 +138,20 @@ const removeFileAsync = async path => {
   });
 };
 
-removeFileAsync(path.resolve(__dirname, 'test.txt'))
-  .then(() => console.log('file removed'))
+// removeFileAsync(path.resolve(__dirname, 'test.txt'))
+//   .then(() => console.log('file removed'))
+//   .catch(err => console.log(err));
+
+// Через переменную окружения передать строку, записать ее в файл
+// прочитать файл, посчитать кол-во слов в файле и записать
+// их в новый файл count.txt, затем удалить первый файл
+
+const text = process.env.TEXT || '';
+
+writeFileAsync(path.resolve(__dirname, 'file.txt'), text)
+  .then(() => readFileAsync(path.resolve(__dirname, 'file.txt')))
+  .then(data => data.split(' ').length)
+  .then(count => writeFileAsync(path.resolve(__dirname, 'count.txt'), `Кол-во слов ${count}`))
   .catch(err => console.log(err));
+
+console.log(process.env.PORT);

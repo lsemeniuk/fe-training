@@ -4,7 +4,7 @@
   "description": "",
   "main": "indx.js",
   "scripts": {
-    "start": "node index.js",
+    "start": "nodemon index.js",
     "start-cross": "cross-env TEXT=\"1 2 3 4 5 sfd\" node index.js",
     "emitter": "cross-env MESSAGE=\"1 2 3 4 5 sfd\" node index.js"
   },

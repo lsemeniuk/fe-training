@@ -22,9 +22,6 @@ module.exports = class Application {
       Object.keys(endpoint).forEach(method => {
         const handler = endpoint[method];
         this.emitter.on(this._getRouterMask(path, method), (req, res) => {
-          this.middlewares.forEach(middleware => {
-            middleware(req, res);
-          });
           handler(req, res);
         });
       });
@@ -37,14 +34,16 @@ module.exports = class Application {
 
       req.on('data', chunk => {
         body += chunk;
-        console.log(chunk);
       });
 
       req.on('end', () => {
         if (body) {
           req.body = JSON.parse(body);
         }
-        const emitted = this.emitter.emit(this._getRouterMask(req.url, req.method), req, res);
+        this.middlewares.forEach(middleware => {
+          middleware(req, res);
+        });
+        const emitted = this.emitter.emit(this._getRouterMask(req.pathname, req.method), req, res);
         if (!emitted) {
           res.end();
         }

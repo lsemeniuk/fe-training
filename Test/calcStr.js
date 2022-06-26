@@ -1,5 +1,5 @@
-const pages = 304;
-const letterNotebookPages = 10;
+const pages = 24;
+const letterNotebookPages = 12;
 const pagesNotebook = letterNotebookPages * 4;
 
 const finalArr = [];

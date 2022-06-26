@@ -1,0 +1,233 @@
+:root {
+  box-sizing: border-box;
+}
+
+*,
+::before,
+::after {
+  box-sizing: inherit;
+}
+
+body {
+  background-color: #709b90;
+  font-family: Helvetica, Arial, sans-serif;
+}
+
+.container {
+  max-width: 1080px;
+  margin: 0 auto;
+}
+
+.grid-container {
+  display: grid;
+  /*  grid-template-columns: 2fr 1fr; /* Розмір та кількість колонок */
+  /*  grid-template-rows: repeat(4, auto); /* Розмір та кількість рядків */
+  grid-gap: 1.5em; /* Відступи між комірками */
+
+  /* Іменовані лінії сітки */
+
+  grid-template-columns:
+    [left-start] 2fr
+    [left-end right-start] 1fr
+    [right-end];
+  grid-template-rows: repeat(4, [row] auto);
+}
+
+header,
+nav {
+  grid-column: 1 / 3; /*Положення елемента сітки в колонках, з 1 по 3 лінію, тобто 1 та другий рядок */
+  grid-row: span 1; /*Положення елемента сітки в рядках, одна горизонтальна полоса */
+}
+
+.main {
+  grid-column: 1 / 2;
+  grid-row: 3 / 5;
+
+  /* grid-column: left; */
+  /* grid-row: row 3 / span 2; */
+}
+
+.sidebar-top {
+  grid-column: 2 /3;
+  grid-row: 3 / 4;
+
+  /* grid-column: right; */
+}
+
+.sidebar-bottom {
+  grid-column: 2 /3;
+  grid-row: 4 / 5;
+
+  /* grid-column: right; */
+}
+
+/* Синтаксис з присвоєнням імен областям */
+
+.grid-container {
+  display: grid;
+  grid-template-areas:
+    'title title'
+    'nav nav'
+    'main aside1'
+    'main aside2';
+  grid-template-columns: 2fr 1fr;
+  grid-template-rows: repeat(4, auto);
+  grid-gap: 1.5em;
+}
+
+header {
+  grid-area: title;
+}
+nav {
+  grid-area: nav;
+}
+
+.main {
+  grid-area: main;
+}
+
+.sidebar-top {
+  grid-area: aside1;
+}
+
+.sidebar-bottom {
+  grid-area: aside2;
+}
+
+.tile {
+  padding: 1.5em;
+  background-color: #fff;
+}
+
+.tile > :first-child {
+  margin-top: 0;
+}
+
+.tile * + * {
+  margin-top: 1.5em;
+}
+
+.page-heading {
+  margin: 0;
+}
+
+.site-nav {
+  display: flex;
+  margin: 0;
+  padding: 0.5em;
+  background-color: #5f4d44;
+  list-style-type: none;
+  border-radius: 0.2em;
+}
+
+.site-nav > li {
+  margin-top: 0;
+}
+
+.site-nav > li > a {
+  display: block;
+  padding: 0.5em 1em;
+  background-color: #cc6b5a;
+  color: white;
+  text-decoration: none;
+}
+
+.site-nav > li + li {
+  /* Для всіх items крім 1-го */
+  margin-left: 1.5em;
+}
+
+.site-nav > .nav-right {
+  margin-left: auto;
+}
+
+.login-form h3 {
+  margin: 0;
+  font-size: 0.9em;
+  font-weight: bold;
+  text-align: right;
+  text-transform: uppercase;
+}
+
+.login-form input:not([type='checkbox']):not([type='radio']) {
+  display: block;
+  margin-top: 0;
+  width: 100%;
+}
+
+.login-form button {
+  margin-top: 1em;
+  border: 1px solid #cc6b5a;
+  background-color: #fff;
+  padding: 0.5em 1em;
+  cursor: pointer;
+}
+
+.centered {
+  text-align: center;
+}
+
+.cost {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  line-height: 0.7;
+}
+
+.cost > span {
+  margin-top: 0;
+}
+
+.cost-currency {
+  font-size: 2rem;
+}
+
+.cost-roubles {
+  font-size: 4rem;
+}
+
+.cost-kopecks {
+  font-size: 1.5rem;
+  align-self: flex-start;
+}
+.cta-button {
+  display: block;
+  background-color: #cc6b5a;
+  color: white;
+  padding: 0.5em 1em;
+  text-decoration: none;
+}
+
+/* Сітка з неявними строками */
+
+.portfolio {
+  margin-top: 2em;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  grid-auto-rows: 1fr;
+  grid-gap: 1em;
+  grid-auto-flow: dense;
+}
+
+.portfolio .featured {
+  grid-row: span 2;
+  grid-column: span 2;
+}
+
+.portfolio > figure {
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+}
+
+.portfolio img {
+  flex: 1;
+  object-fit: cover;
+  max-width: 100%;
+}
+.portfolio figcaption {
+  padding: 0.3em 0.8em;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: #fff;
+  text-align: right;
+}

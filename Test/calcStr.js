@@ -1,4 +1,4 @@
-const pages = 24;
+const pages = 56;
 const letterNotebookPages = 12;
 const pagesNotebook = letterNotebookPages * 4;
 
@@ -29,4 +29,5 @@ for (let i = 1; i <= notebooks; i++) {
   }
   finalArr.push({ strFront, strBack });
 }
+
 console.log(finalArr, 'notebooks', notebooks);

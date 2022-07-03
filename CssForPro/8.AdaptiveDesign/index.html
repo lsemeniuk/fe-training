@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" type="text/css" />
+    <title>Adaptive design</title>
+  </head>
+  <body>
+    <header id="header" class="page-header">
+      <div class="title">
+        <h1>Професійна техніка для ожарщиків</h1>
+        <div class="slogan">Ми любимо каву</div>
+      </div>
+    </header>
+    <nav class="menu" id="main-menu">
+      <button class="menu-toggle" id="toggle-menu">Згорнути меню</button>
+      <div class="menu-dropdown">
+        <ul class="nav-menu">
+          <li><a href="/about">Про нас</a></li>
+          <li><a href="/shop">Магазин</a></li>
+          <li><a href="/menu">Меню</a></li>
+          <li><a href="/brew">Приготування кави</a></li>
+        </ul>
+      </div>
+    </nav>
+    <aside id="hero" class="hero">
+      Вітаємо на сайті нашої компанії! Усіма силами ми стараємось підтримувати репутацію найкращої компанії для
+      обжарщиків
+    </aside>
+    <main id="main">
+      <div class="row">
+        <section class="column">
+          <h2 class="subtitle">Моносорта</h2>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim, laborum consequuntur cumque sunt nihil
+            maiores?<a href="/">Lorem, ipsum.</a> Lorem, ipsum dolor.
+          </p>
+        </section>
+        <section class="column">
+          <h2 class="subtitle">Суміші</h2>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim, laborum consequuntur cumque sunt nihil
+            maiores?<a href="/">Lorem, ipsum.</a> Lorem, ipsum dolor.
+          </p>
+        </section>
+        <section class="column">
+          <h2 class="subtitle">Приготування кави</h2>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim, laborum consequuntur cumque sunt nihil
+            maiores?<a href="/">Lorem, ipsum.</a> Lorem, ipsum dolor.
+          </p>
+        </section>
+      </div>
+    </main>
+    <script type="text/javascript">
+      (function () {
+        let button = document.getElementById('toggle-menu');
+        button.addEventListener('click', function (event) {
+          event.preventDefault();
+          let menu = document.getElementById('main-menu');
+          menu.classList.toggle('is-open');
+        });
+      })();
+    </script>
+  </body>
+</html>

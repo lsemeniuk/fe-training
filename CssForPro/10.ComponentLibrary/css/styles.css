@@ -1,0 +1,59 @@
+:root {
+  box-sizing: border-box;
+}
+
+*,
+::before,
+::after {
+  box-sizing: inherit;
+}
+
+body {
+  font-family: Helvetica, Arial, sans-serif;
+}
+
+/*
+Media
+
+Відображення зображення та/або контенту одне біля одного.
+
+Markup:
+<div class="media">
+  <img src="https://via.placeholder.com/150" alt="runner" class="media__image" />
+  <div class="media__body">
+    <h4>Фізкультура</h4>
+    <p>
+      Фізична підготовка &dash; важлива складова профілактики травматизму. Зосередьтеся на свому тілі &dash;
+      особливо на ногах Lorem ipsum, dolor sit amet consectetur adipisicing elit. Magnam aliquid quo ex quia.
+      Dolor odio, nulla culpa hic vero dicta.
+    </p>
+  </div>
+</div>
+
+Styleguide Media
+*/
+.media {
+  padding: 1.5em;
+  background-color: #eee;
+  border-radius: 0.5em;
+}
+
+.media::after {
+  content: '';
+  display: block;
+  clear: both;
+}
+
+.media__image {
+  float: left;
+  margin-right: 1.5em;
+}
+
+.media__body {
+  overflow: auto;
+  margin-top: 0;
+}
+
+.media__body > h4 {
+  margin-top: 0;
+}

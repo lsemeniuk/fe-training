@@ -1,0 +1,8 @@
+{
+  "title": "My pattern library",
+  "source": ["./css"],
+  "destination": "docs/",
+  "homepage": "../kss-homepage.md",
+  "css": ["../css/styles.css", "../css/buttons.css", "../css/dropdown.css"],
+  "js": ["../js/docs.js"]
+}

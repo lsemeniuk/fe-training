@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./styles/base.css" type="text/css" />
+    <link rel="stylesheet" href="./styles/message.css" type="text/css" />
+    <link rel="stylesheet" href="./styles/button.css" type="text/css" />
+    <link rel="stylesheet" href="./styles/media.css" type="text/css" />
+    <link rel="stylesheet" href="./styles/dropdown.css" type="text/css" />
+    <link rel="stylesheet" href="./styles/menu.css" type="text/css" />
+    <title>Module class</title>
+  </head>
+  <body>
+    <section>
+      <h3>Варіації модуля повідомлення</h3>
+      <div class="message">Вдало збережено</div>
+      <div class="message message--success">Вдало збережено</div>
+      <div class="message message--warning">Вдало збережено</div>
+      <div class="message message--error">Вдало збережено</div>
+    </section>
+    <section>
+      <h3>Варіації модуля кнопок</h3>
+      <div class="tile">
+        <button class="button">Button</button>
+        <button class="button button--large">Детальніше</button>
+        <button class="button button--success">Зберегти</button>
+        <button class="button button--danger button--small">Відміна</button>
+      </div>
+    </section>
+    <section>
+      <h3>Варіації модуля медіа</h3>
+      <div class="media">
+        <img src="./img/runner.png" alt="runner" class="media__image" />
+        <div class="media__body">
+          <h4>Фізкультура</h4>
+          <p>
+            Фізична підготовка &dash; важлива складова профілактики травматизму. Зосередьтеся на свому тілі &dash;
+            особливо на ногах Lorem ipsum, dolor sit amet consectetur adipisicing elit. Magnam aliquid quo ex quia.
+            Dolor odio, nulla culpa hic vero dicta.
+          </p>
+        </div>
+      </div>
+      <div class="media media--right">
+        <img src="./img/runner.png" alt="runner" class="media__image" />
+        <div class="media__body">
+          <h4>Фізкультура</h4>
+          <p>
+            Фізична підготовка &dash; важлива складова профілактики травматизму. Зосередьтеся на свому тілі &dash;
+            особливо на ногах Lorem ipsum, dolor sit amet consectetur adipisicing elit. Magnam aliquid quo ex quia.
+            Dolor odio, nulla culpa hic vero dicta.
+          </p>
+        </div>
+      </div>
+    </section>
+    <section>
+      <h3>Структура модуля дропдаун та меню</h3>
+      <nav>
+        <div class="dropdown">
+          <button class="dropdown__toggle">Меню</button>
+          <div class="dropdown__drawer">
+            <ul class="menu">
+              <li><a href="/">Головна</a></li>
+              <li><a href="/coffees">Ростери</a></li>
+              <li><a href="/brewers">Кавоварки</a></li>
+              <li><a href="/specials">Акції</a></li>
+              <li><a href="/about">Про нас</a></li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+      <script type="text/javascript">
+        (function () {
+          let toogle = document.querySelector('.dropdown__toggle');
+          toogle.addEventListener('click', function (event) {
+            event.preventDefault();
+            let dropdown = event.target.parentNode;
+            console.log(dropdown);
+            dropdown.classList.toggle('is-open');
+          });
+        })();
+      </script>
+    </section>
+  </body>
+</html>

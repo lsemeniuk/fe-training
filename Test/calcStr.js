@@ -1,4 +1,4 @@
-const pages = 56;
+const pages = 84;
 const letterNotebookPages = 12;
 const pagesNotebook = letterNotebookPages * 4;
 

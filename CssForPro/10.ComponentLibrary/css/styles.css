@@ -13,47 +13,54 @@ body {
 }
 
 /*
-Media
+Центрування тексту
 
-Відображення зображення та/або контенту одне біля одного.
+Вирівнювання тексту по центру блока за допомогою text-center
 
 Markup:
-<div class="media">
-  <img src="https://via.placeholder.com/150" alt="runner" class="media__image" />
-  <div class="media__body">
-    <h4>Фізкультура</h4>
-    <p>
-      Фізична підготовка &dash; важлива складова профілактики травматизму. Зосередьтеся на свому тілі &dash;
-      особливо на ногах Lorem ipsum, dolor sit amet consectetur adipisicing elit. Magnam aliquid quo ex quia.
-      Dolor odio, nulla culpa hic vero dicta.
-    </p>
-  </div>
+<p class="text-center">Центрований текст</p>
+
+Weight: 1
+
+Styleguide Utilities.text-center
+*/
+.text-center {
+  text-align: center !important;
+}
+
+/*
+Вирівнювання по лівому краю
+
+Для вирівнювання контенту по лівому краю використовуйте властивість float-left
+
+Weight: 3
+
+Styleguide Utilities.float-left
+*/
+.float-left {
+  float: left;
+}
+
+/*
+Клас clearfix
+
+Призначити елементу клас clearfix для скидання обтікання плаваючого контента
+
+Markup:
+<div class="clearfix">
+  <span class="float-left">floated</span>
 </div>
 
-Styleguide Media
+Weight: 2
+
+Styleguide Utilities.clearfix
 */
-.media {
-  padding: 1.5em;
-  background-color: #eee;
-  border-radius: 0.5em;
+.clearfix::before,
+.clearfix::after {
+  display: table;
+  content: ' ';
 }
 
-.media::after {
-  content: '';
-  display: block;
+.clearfix::after {
   clear: both;
-}
-
-.media__image {
-  float: left;
-  margin-right: 1.5em;
-}
-
-.media__body {
-  overflow: auto;
-  margin-top: 0;
-}
-
-.media__body > h4 {
-  margin-top: 0;
 }

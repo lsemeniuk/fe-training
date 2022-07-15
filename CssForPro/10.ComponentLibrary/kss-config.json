@@ -3,6 +3,6 @@
   "source": ["./css"],
   "destination": "docs/",
   "homepage": "../kss-homepage.md",
-  "css": ["../css/styles.css", "../css/buttons.css", "../css/dropdown.css"],
+  "css": ["../css/styles.css", "../css/buttons.css", "../css/dropdown.css", "../css/media.css"],
   "js": ["../js/docs.js"]
 }

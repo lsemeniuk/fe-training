@@ -1,0 +1,54 @@
+.container {
+  margin: 0 auto;
+  max-width: 1080px;
+}
+
+.tile-row {
+  display: flex;
+}
+
+.tile-row > * {
+  flex: 1;
+}
+
+.tile-row > * + * {
+  margin-left: 1.5625em;
+}
+
+.tile {
+  background-color: var(--white);
+  border-radius: 0.3em;
+  padding: 1.5625em;
+}
+
+.tile h4 {
+  margin-bottom: 1.5em;
+}
+
+.page-footer {
+  margin-top: 3em;
+  padding: 1em 0;
+  background-color: var(--light-gray);
+  color: var(--gray);
+}
+
+.page-footer__inner {
+  margin: 0 auto;
+  max-width: 1080px;
+  text-align: center;
+  font-size: 0.8em;
+}
+
+.tag-list {
+  list-style: none;
+  padding-left: 0;
+}
+
+.tag-list > li {
+  display: inline;
+  padding: 0.3rem 0.5rem;
+  font-size: 0.8rem;
+  border-radius: 0.2rem;
+  background-color: var(--light-gray);
+  line-height: 2.6;
+}

@@ -1,0 +1,126 @@
+:root {
+  box-sizing: border-box;
+}
+
+*,
+::before,
+::after {
+  box-sizing: inherit;
+}
+
+body {
+  font-family: Helvetica, Arial, sans-serif;
+  margin: 0;
+}
+
+.tile {
+  display: flex;
+  justify-content: center;
+  margin: 2em 0;
+}
+
+.button {
+  padding: 0.5em 0.7em;
+  border: 1px solid hsl(90, 95%, 45%);
+  background-color: hsl(90, 95%, 70%);
+  font-size: 1rem;
+  margin: 1em;
+  transition-property: all;
+  transition-duration: 0.5s;
+}
+
+.button:hover {
+  border: 1px solid hsl(00, 95%, 45%);
+  background-color: hsl(00, 95%, 70%);
+  border-radius: 2em;
+}
+
+.container {
+  position: relative;
+  height: 300px;
+}
+
+.box-transition {
+  position: absolute;
+  left: 0;
+  height: 30px;
+  width: 30px;
+  background-color: hsl(130, 50%, 50%);
+
+  transition: all 1s cubic-bezier(0.06, 0.59, 0.32, 0.88);
+}
+
+.container:hover .box-transition {
+  left: 400px;
+}
+
+.box-step {
+  margin-top: 3em;
+
+  position: absolute;
+  left: 0;
+  height: 30px;
+  width: 30px;
+  background-color: hsl(200, 50%, 50%);
+
+  transition: all 1s steps(3);
+}
+
+.container:hover .box-step {
+  left: 400px;
+}
+
+.dropdown__toggle {
+  display: block;
+  padding: 0.5em 1em;
+  border: 1px solid hsl(280, 10%, 80%);
+  color: hsl(280, 30%, 60%);
+  background-color: white;
+  font: inherit;
+  text-decoration: none;
+  transition: background-color 0.2s linear;
+}
+
+.dropdown__toggle:hover {
+  background-color: hsl(280, 15%, 95%);
+}
+
+.dropdown__drawer {
+  position: absolute;
+  background-color: white;
+  width: 10em;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.2s linear, visibility 0s linear 0.2s;
+}
+
+.dropdown.is-open .dropdown__drawer {
+  visibility: visible;
+  opacity: 1;
+  transition-delay: 0s;
+}
+
+.menu {
+  padding-left: 0;
+  margin: 0;
+  list-style-type: none;
+}
+
+.menu > li + li > a {
+  border-top: 0;
+}
+
+.menu > li > a {
+  display: block;
+  padding: 0.5em 1em;
+  color: hsl(280, 40%, 60%);
+  background-color: white;
+  text-decoration: none;
+  transition: all 0.2s linear;
+  border: 1px solid hsl(280, 10%, 80%);
+}
+
+.menu > li > a:hover {
+  background-color: hsl(280, 15%, 95%);
+  color: hsl(280, 25%, 10%);
+}

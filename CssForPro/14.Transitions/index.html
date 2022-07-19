@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" type="text/css" />
+    <title>Transitions</title>
+  </head>
+  <body>
+    <div class="tile">
+      <button class="button">Наведи на мене мишу</button>
+    </div>
+    <div class="container">
+      <div class="box-transition"></div>
+      <div class="box-step"></div>
+    </div>
+    <div class="dropdown" aria-haspopup="true">
+      <button class="dropdown__toggle">Меню</button>
+      <div class="dropdown__drawer">
+        <ul class="menu" role="menu">
+          <li role="menuitem"><a href="/">Головна</a></li>
+          <li role="menuitem"><a href="/coffees">Ростери</a></li>
+          <li role="menuitem"><a href="/brewers">Кавоварки</a></li>
+          <li role="menuitem"><a href="/specials">Акції</a></li>
+          <li role="menuitem"><a href="/about">Про нас</a></li>
+        </ul>
+      </div>
+    </div>
+    <p><a href="/rad-more">Детальніше</a></p>
+    <script type="text/javascript">
+      (function () {
+        let toogle = document.querySelector('.dropdown__toggle');
+        toogle.addEventListener('click', function (event) {
+          event.preventDefault();
+          let dropdown = event.target.parentNode;
+          dropdown.classList.toggle('is-open');
+        });
+      })();
+    </script>
+  </body>
+</html>

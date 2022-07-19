@@ -5,7 +5,7 @@
 .nav-container__inner {
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  align-items: flex-end;
   max-width: 1080px;
   margin: 0 auto;
   padding: 0.625em 0;
@@ -14,9 +14,14 @@
 .home-link {
   color: var(--text-color);
   font-size: 1.6rem;
-  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-family: 'Kurale', serif;
   font-weight: bold;
   text-decoration: none;
+  letter-spacing: 0.03em;
+}
+
+.fonts-failed .home-link {
+  font-family: Georgia, 'Times New Roman', Times, serif;
 }
 
 .top-nav {
@@ -31,11 +36,14 @@
 
 .top-nav a {
   display: block;
-  padding: 0.3em 1.25em;
+  font-size: 0.8rem;
+  padding: 0.3rem 1.25rem;
   color: var(--white);
   background-color: var(--brand-green);
   text-decoration: none;
   border-radius: 3px;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
 }
 
 .top-nav a:hover {

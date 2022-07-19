@@ -4,11 +4,12 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="https://fonts.googleapis.com/css2?family=Kurale&family=Roboto:wght@300&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="./styles/base.css" type="text/css" />
     <link rel="stylesheet" href="./styles/header.css" type="text/css" />
     <link rel="stylesheet" href="./styles/hero.css" type="text/css" />
     <link rel="stylesheet" href="./styles/contant.css" type="text/css" />
-    <title>Contrast, corors and interval</title>
+    <title>Contrast, corors, interval and fonts</title>
   </head>
   <body>
     <nav class="nav-container">
@@ -63,5 +64,26 @@
     <footer class="page-footer">
       <div class="page-footer__inner">Відповідність &copy; 2022 Корпорація "Тандем"</div>
     </footer>
+
+    <script
+      type="text/javascript"
+      src="https://cdnjs.cloudflare.com/ajax/libs/fontfaceobserver/2.1.0/fontfaceobserver.js"
+    ></script>
+
+    <script type="text/javascript">
+      let html = document.documentElement;
+
+      let roboto = new FontFaceObserver('Roboto');
+      let kurale = new FontFaceObserver('Kurale');
+      let timeout = 2000;
+
+      Promise.all([roboto.load(null, timeout), kurale.load(null, timeout)])
+        .then(function () {
+          html.classList.add('fonts-loaded');
+        })
+        .catch(function (e) {
+          html.classList.add('fonts-failed');
+        });
+    </script>
   </body>
 </html>

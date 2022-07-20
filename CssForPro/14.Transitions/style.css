@@ -51,7 +51,7 @@ body {
 }
 
 .container:hover .box-transition {
-  left: 400px;
+  left: 900px;
 }
 
 .box-step {
@@ -68,6 +68,11 @@ body {
 
 .container:hover .box-step {
   left: 400px;
+}
+
+.menu__container {
+  display: flex;
+  justify-content: space-around;
 }
 
 .dropdown__toggle {
@@ -89,15 +94,6 @@ body {
   position: absolute;
   background-color: white;
   width: 10em;
-  opacity: 0;
-  visibility: hidden;
-  transition: opacity 0.2s linear, visibility 0s linear 0.2s;
-}
-
-.dropdown.is-open .dropdown__drawer {
-  visibility: visible;
-  opacity: 1;
-  transition-delay: 0s;
 }
 
 .menu {
@@ -123,4 +119,26 @@ body {
 .menu > li > a:hover {
   background-color: hsl(280, 15%, 95%);
   color: hsl(280, 25%, 10%);
+}
+
+.dropdown-one__drawer {
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.2s linear, visibility 0s linear 0.2s;
+}
+
+.dropdown-one.is-open .dropdown-one__drawer {
+  visibility: visible;
+  opacity: 1;
+  transition-delay: 0s;
+}
+
+.dropdown-two__drawer {
+  height: 0;
+  overflow: hidden;
+  transition: height 0.3s ease-out;
+}
+
+.dropdown-one.is-open .dropdown-one__drawer {
+  height: auto;
 }

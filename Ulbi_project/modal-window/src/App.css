@@ -1,0 +1,17 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+p {
+  margin: 20px;
+  line-height: 2;
+}
+
+.open-btn {
+  margin: 10px 20px;
+  padding: 20px;
+
+  font-size: 2rem;
+}

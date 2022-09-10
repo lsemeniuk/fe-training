@@ -1,14 +1,30 @@
 const range = function (start, end, step = 1) {
-  const arr = [];
-  for (let i = start; i <= end; i = i + step) {
-    arr.push(i);
+  if (start === end) {
+    return [];
   }
+
+  const arr = [];
+
+  if (start > end) {
+    step > 0 && (step = -step);
+
+    for (let i = start; i >= end; i = i + step) {
+      arr.push(i);
+    }
+  } else {
+    for (let i = start; i <= end; i = i + step) {
+      arr.push(i);
+    }
+  }
+
   return arr;
 };
 
 const sum = function (arr) {
   return arr.reduce((a, b) => a + b);
 };
+
+// console.log(range(5, 1));
 
 // console.log(sum(range(1, 20, 2)));
 
@@ -60,15 +76,21 @@ const prepend = function (element, list) {
 
 // console.log(prepend(7, list));
 
-const nth = function (item, list) {
-  if (item === 1) {
+const nth = function (list, item) {
+  if (!item && item != 0) {
+  }
+
+  if (item === 0) {
     return list.value;
+  } else if (!item) {
+    return undefined;
   } else {
-    return nth(item - 1, list.rest);
+    return nth(list.rest, item - 1);
   }
 };
 
-// console.log(nth(3, list));
+// console.log(nth(arrayToList([10, 20, 30]), 2));
+// console.log(arrayToList([10, 20, 30]));
 
 const deepEqual = function (firstValue, secondValue) {
   if (firstValue === secondValue) {
@@ -90,11 +112,12 @@ const deepEqual = function (firstValue, secondValue) {
       if (secondValueKeys.includes(firstValueKeys[i]) && firstValue[firstValueKeys] === firstValue[secondValueKeys]) {
         return true;
       }
-      const element = firstValueKeys[i];
     }
   } else {
     return false;
   }
 };
 
-console.log(deepEqual({ first: 1, sec: 2 }, { sec: 2, first: 1 }));
+// console.log(deepEqual({ first: 1, sec: 2 }, { sec: 2, first: 1 }));
+let obj = { here: { is: 'an' }, object: 2 };
+console.log(deepEqual(obj, { here: 1, object: 2 }));

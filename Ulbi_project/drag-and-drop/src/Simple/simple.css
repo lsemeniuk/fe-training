@@ -1,0 +1,19 @@
+.simple {
+  width: 100vw;
+  height: 50vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.simple__card {
+  width: 20vw;
+  height: 90%;
+  border-radius: 12px;
+  border: 5px solid;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 20px;
+  cursor: grab;
+}
